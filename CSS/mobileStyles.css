@@ -1,0 +1,95 @@
+#location {
+     width: 90vw;
+     height: 90vw;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+}
+
+#info {
+     margin-top: 65px;
+     height: 25%;
+     width: 100%;
+     display: flex;
+     justify-content: space-evenly;
+}
+
+#info div {
+     font-size: 1rem;
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+}
+
+#info div > div:nth-child(1) {
+     margin-top: 0;
+}
+
+#info div:nth-child(1) {
+     margin-top: 10px;
+}
+
+#day {
+     margin-top: 0;
+}
+
+.mainIconDesc {
+     margin-top: 0;
+     font-size: 3rem;
+}
+
+#temp {
+     font-size: 3rem;
+}
+
+#weatherDescription {
+     font-size: 1.25rem;
+}
+
+#descriptions {
+     width: 85vw;
+     height: 85vw;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+}
+
+#time {
+     display: flex;
+     flex-direction: column;
+}
+
+#desc {
+     display: flex;
+     flex-direction: column;
+}
+
+#nextLocation {
+     width: 85%;
+}
+
+#displayInfo {
+     position: absolute;
+     width: 90%;
+     height: 100%;
+     flex-wrap: wrap;
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     gap: 5%;
+     left: 50%;
+     transform: translateX(-50%);
+}
+
+#days {
+     justify-content: space-evenly;
+     height: 27.5%;
+     margin-top: 15px;
+}
+
+.day {
+     width: 22.5%;
+}

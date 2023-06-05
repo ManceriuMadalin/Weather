@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+     <link rel="stylesheet" href="CSS/styles.css">
+     <link rel="stylesheet" href="CSS/mobileStyles.css" media="only screen and (max-width: 767px)">
+     <title>Weather App</title>
+</head>
+
+<body>
+     <div id="container">
+          <div class="location">
+               <input type="text" id="inputLocation" placeholder="Location">
+               <i class="fa-regular fa-location-dot iconYourLocation"></i>
+          </div>
+          <div id="location" class="info">
+               <div id="time">
+                    <div id="day"></div>
+                    <div id="specificDate"></div>
+                    <div id="city">
+                         <i class="fa-regular fa-location-dot"></i>
+                         <div id="nameOfCity"></div>
+                    </div>
+               </div>
+               <div id="desc">
+                    <i class="fa-solid mainIconDesc"></i>
+                    <div id="temp"></div>
+                    <div id="weatherDescription"></div>
+               </div>
+          </div>
+          <div id="descriptions" class="info">
+               <div id="displayInfo">
+                    <div id="info">
+                         <div>
+                              <div>Precipitation</div>
+                              <div id="precipitation"></div>
+                         </div>
+                         <div>
+                              <div>Humidity</div>
+                              <div id="humidity"></div>
+                         </div>
+                         <div>
+                              <div>Wind</div>
+                              <div id="wind"></div>
+                         </div>
+                    </div>
+                    <div id="days">
+                         <div class="day" id="today">
+                              <i class="fa-solid"></i>
+                              <div class="dayOfWeek"></div>
+                              <div class="tempOfDay"></div>
+                         </div>
+                         <div class="day" id="secondDay">
+                              <i class="fa-solid"></i></i>
+                              <div class="dayOfWeek"></div>
+                              <div class="tempOfDay"></div>
+                         </div>
+                         <div class="day" id="thirdDay">
+                              <i class="fa-solid"></i>
+                              <div class="dayOfWeek"></div>
+                              <div class="tempOfDay"></div>
+                         </div>
+                         <div class="day" id="fourthDay">
+                              <i class="fa-solid"></i>
+                              <div class="dayOfWeek"></div>
+                              <div class="tempOfDay"></div>
+                         </div>
+                    </div>
+                    <div id="newLocation">
+                         <input type="text" id="nextLocation" placeholder="Change Location">
+                         <in class="fa-regular fa-location-dot iconYourLocation"></i>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <script src="JS/main.js"></script>
+</body>
+
+</html>

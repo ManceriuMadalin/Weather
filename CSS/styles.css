@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+
+body {
+     background-color: #1B2223;
+     font-family: 'Open Sans';
+     color: #F4FEFD;
+}
+
+input, input::placeholder {
+     font-family: 'Open Sans';
+}
+
+.location {
+     position: absolute;
+     visibility: hidden;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+     display: flex;
+     gap: 10px;
+     z-index: 3;
+}
+
+input:first-child {
+     width: 40vh;
+     font-size: 1.5rem;
+     text-indent: 10px;
+     border-radius: 2.25vh;
+     border: none;
+     background-color: #3A4F50;
+     color: #F4FEFD;
+     outline: none;
+}
+
+input:first-child::placeholder {
+     color: #F4FEFD;
+}
+
+.fa-location-dot {
+     font-size: 4.5vh;
+}
+
+.info {
+     position: absolute;
+     display: flex;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     height: 60vh;
+     width: 60vh;
+     background-color: #0EF6CC;
+     border-radius: 2.5vh;
+     transition: all 1s;
+     visibility: hidden;
+}
+
+#descriptions {
+     justify-content: end;
+     height: 55vh;
+     width: 70vh;
+     background-color: #3A4F50;
+     z-index: 1;
+}    
+
+#displayInfo {
+     display: flex;
+     flex-direction: column;
+     gap: 10%;
+     width: 80%;
+     height: 100%;
+}
+
+#location {
+     z-index: 2;
+     flex-direction: column;
+}
+
+#info {
+     margin-top: 5%;
+     display: flex;
+     flex-direction: column;
+     height: 35%;
+     justify-content: start;
+     font-size: 1.5rem;
+     gap: 10%;
+     font-family: 'Open Sans';
+}
+
+#info div {
+     display: flex;
+     flex-direction: row;
+     width: 80%;
+}
+
+#info div > div {
+     width: 50%;
+}
+
+#info div > div:nth-child(2) {
+     justify-content: end;
+}
+
+#days {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: no-wrap;
+     gap: 15px;
+     height: 25%;
+}
+
+.day {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     width: 17.5%;
+     background-color: #1B2223;
+     color: #F4FEFD;
+     align-items: center;
+     justify-content: center;
+     gap: 10%;
+     border-radius: calc((70vh * 15 / 100) / 4);
+     transition: all .5s;
+}
+
+#days div:first-child {
+     color: #1B2223;
+     background-color: #F4FEFD;
+}
+
+#nextLocation {
+     border-bottom: 1px #0EF6CC solid;
+     border-radius: 0%;
+     transition: all 1s;
+     width: 65%;
+}
+
+.day:not(.active):hover {
+     background-color: #F4FEFD;
+     color: #1B2223;
+}
+
+.iconYourLocation {
+     color: #0EF6CC;
+}
+
+#time {
+     height: 50%;
+}
+
+#desc {
+     height: 50%;
+     display: flex;
+     flex-direction: column;
+}
+
+#desc > i {
+     margin-top: 30px;
+}
+
+#desc > div, #desc > i {
+     margin-left: 25px;
+}
+
+#time > div{
+     margin-left: 25px;
+}
+
+#day {
+     font-family: 'Open Sans';
+     font-style: italic;
+     font-weight: 700;
+     font-size: 3rem;
+     margin-top: 15px;
+}
+
+#specificDate {
+     font-size: 1.5rem;
+     font-weight: 500;
+     margin-top: -10px;
+}
+
+#city {
+     display: flex;
+     margin-top: -5px;
+     align-items: center;
+     font-size: 1.5rem;
+     font-weight: 500;
+}
+
+#city > i {
+     transform: scale(.5);
+}
+
+.mainIconDesc {
+     font-size: 3.5rem;
+}
+
+#temp {
+     font-size: 4rem;
+     font-weight: 700;
+}
+
+#weatherDescription {
+     margin-top: -10px;
+     font-weight: 700;
+     font-size: 1.25rem;
+}

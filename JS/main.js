@@ -1,12 +1,4 @@
 let numOfClick = 0
-let icon = {
-     'fa-sun': ['clear sky', 'haze', 'dust'],
-     'fa-snowflake': ['snow', 'mist'],
-     'fa-cloud': ['few clouds', 'scattered clouds', 'broken clouds', 'overcast clouds', 'smoke', 'sand', 'fog', 'ash'],
-     'fa-tornado': ['tornado'],
-     'fa-cloud-rain': ['light rain', 'moderate rain'],
-     'fa-cloud-bolt': ['heavy Rain', 'thunderstorm', 'squalls']
-}
 let screenSize = window.innerWidth
 
 window.onload = () => {
@@ -44,7 +36,7 @@ function styleContent() {
           document.querySelector('#location').style.visibility = 'visible'
           document.querySelector('#descriptions').style.visibility = 'visible'
           document.querySelector('#location').style.top = '30%'
-          document.querySelector('#descriptions').style.top = '72.5%'
+          document.querySelector('#descriptions').style.top = '73.5%'
      }
 }
 
@@ -78,40 +70,29 @@ function addLeftContent(weatherData) {
 }
 
 function addIcons(weatherData) {
-     if (numOfClick > 1) { removeClass() }
-     addClass(weatherData)
-}
-
-function removeClass() {
-     let icons = document.querySelectorAll('.fa-solid')
-
-     icons.forEach((icon) => {
-          let classes = icon.classList
-          icon.classList.remove(classes[classes.length - 1])
-     })
-}
-
-function addClass(weatherData) {
-     let icons = document.querySelectorAll('.fa-solid')
-
-     for (let i = 0; i < icons.length; i++) {
-          let description = i <= 1 ? weatherData[0].description : weatherData[i - 1].description
-          console.log(description)
-          if (icon['fa-cloud'].includes(description)) {
-               icons[i].classList.add('fa-cloud')
-          } else if (icon['fa-cloud-bolt'].includes(description)) {
-               icons[i].classList.add('fa-cloud-bolt')
-          } else if (icon['fa-cloud-rain'].includes(description)) {
-               icons[i].classList.add('fa-cloud-rain')
-          } else if (icon['fa-snowflake'].includes(description)) {
-               icons[i].classList.add('fa-snowflake')
-          } else if (icon['fa-sun'].includes(description)) {
-               icons[i].classList.add('fa-sun')
-          } else if (icon['fa-tornado'].includes(description)) {
-               icons[i].classList.add('fa-tornado')
+     let j = 0;
+     if (numOfClick >= 1) {
+          let arr = document.querySelectorAll('i')
+          for (let i = 1; i < arr.length; i++) {
+               arr[i].innerHTML = ''
           }
      }
-}
+     for (let i = 1; i < 6; i++) {
+          const img = document.createElement('img')
+          img.src = 'http://openweathermap.org/img/wn/' + weatherData[j].iconW + '@2x.png'
+          console.log(document.querySelectorAll('i')[i], weatherData[j].iconW)
+          document.querySelectorAll('i')[i].appendChild(img)
+          if (i > 1) {
+               j++
+               img.style.marginTop = '-10px'
+               img.style.width = '50px'
+               img.style.height = '50px'
+          } else {
+               img.style.width = '100px'
+               img.style.height = '100px'
+          }
+     }
+  }
 
 function addData(location) {
      const apiKey = '547429bc04e48dc091c9a3b718888288';
@@ -129,10 +110,12 @@ function addData(location) {
                          description: data.list[i * 8].weather[0].description,
                          precipitation: data.list[i * 8].rain ? data.list[i * 8].rain['1h'] || 0 : 0,
                          wind: data.list[i * 8].wind.speed,
-                         humidity: data.list[i * 8].main.humidity
+                         humidity: data.list[i * 8].main.humidity,
+                         iconW: data.list[0].weather[0].icon
                     };
 
                     weatherData.push(weatherInfo);
+                    console.log(weatherData)
                }
 
                if (numOfClick === 0) { styleContent() }

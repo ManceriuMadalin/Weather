@@ -10,6 +10,11 @@ input, input::placeholder {
      font-family: 'Open Sans';
 }
 
+img {
+     width: 100px;
+     height: 100px;
+}
+
 .location {
      position: absolute;
      visibility: hidden;
@@ -34,10 +39,6 @@ input:first-child {
 
 input:first-child::placeholder {
      color: #F4FEFD;
-}
-
-.fa-location-dot {
-     font-size: 4.5vh;
 }
 
 .info {
@@ -117,9 +118,13 @@ input:first-child::placeholder {
      color: #F4FEFD;
      align-items: center;
      justify-content: center;
-     gap: 10%;
+     gap: 5%;
      border-radius: calc((70vh * 15 / 100) / 4);
      transition: all .5s;
+}
+
+.dayOfWeek {
+     margin-top: -20px;
 }
 
 #days div:first-child {
@@ -144,7 +149,7 @@ input:first-child::placeholder {
 }
 
 #time {
-     height: 50%;
+     height: 40%;
 }
 
 #desc {
@@ -154,7 +159,8 @@ input:first-child::placeholder {
 }
 
 #desc > i {
-     margin-top: 30px;
+     margin-top: 20px;
+     height: 35%;
 }
 
 #desc > div, #desc > i {
